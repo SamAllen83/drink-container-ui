@@ -4,13 +4,8 @@ import AppHeader from './AppHeader';
 import MicroFrontend from './MicroFrontend';
 import About from './About';
 
-const {
-  REACT_APP_BROWSE_HOST: browseHost,
-  REACT_APP_RESTAURANT_HOST: restaurantHost,
-} = process.env;
-
 let numRestaurants = 0;
-fetch(`${process.env.REACT_APP_CONTENT_HOST}/restaurants.json`)
+fetch(`http://localhost:5000/restaurants.json`)
   .then(res => res.json())
   .then(restaurants => {
     numRestaurants = restaurants.length;
@@ -19,10 +14,10 @@ const getRandomRestaurantId = () =>
   Math.floor(Math.random() * numRestaurants) + 1;
 
 const Browse = ({ history }) => (
-  <MicroFrontend history={history} host={browseHost} name="Browse" />
+  <MicroFrontend history={history} host="http://localhost:3001" name="Browse" />
 );
 const Restaurant = ({ history }) => (
-  <MicroFrontend history={history} host={restaurantHost} name="Restaurant" />
+  <MicroFrontend history={history} host="http://localhost:3002" name="Restaurant" />
 );
 const Random = () => <Redirect to={`/restaurant/${getRandomRestaurantId()}`} />;
 
