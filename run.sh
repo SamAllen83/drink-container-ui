@@ -1,0 +1,1 @@
+docker run -it --rm --network="host" -p 3000:3000 --name drink-container-ui drink-container-ui
