@@ -4,13 +4,12 @@ import AppHeader from './AppHeader';
 import MicroFrontend from './MicroFrontend';
 import About from './About';
 
-const {
-  REACT_APP_BROWSE_HOST: browseHost,
-  REACT_APP_RESTAURANT_HOST: restaurantHost,
-} = process.env;
+const browseHost = process.env.REACT_APP_BROWSE_HOST || 'http://localhost:3001/'
+const restaurantHost = process.env.REACT_APP_RESTAURANT_HOST || 'http://localhost:3002'
+const contentHost = process.env.REACT_APP_CONTENT_HOST || 'http://localhost:5000'
 
 let numRestaurants = 0;
-fetch(`${process.env.REACT_APP_CONTENT_HOST}/restaurants.json`)
+fetch(`${contentHost}/restaurants.json`)
   .then(res => res.json())
   .then(restaurants => {
     numRestaurants = restaurants.length;

@@ -5,7 +5,7 @@ import './AppHeader.css';
 const AppHeader = () => (
   <header>
     <div className="center-column">
-      <h1>🍽 Feed me</h1>
+      <h1>Quench my thirst</h1>
     </div>
     <nav>
       <ol className="center-column">
