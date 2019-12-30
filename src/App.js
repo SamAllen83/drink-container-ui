@@ -4,9 +4,9 @@ import AppHeader from './AppHeader';
 import MicroFrontend from './MicroFrontend';
 import About from './About';
 
-const browseHost = process.env.REACT_APP_BROWSE_HOST || 'http://localhost:3001/'
-const restaurantHost = process.env.REACT_APP_RESTAURANT_HOST || 'http://localhost:3002'
-const contentHost = process.env.REACT_APP_CONTENT_HOST || 'http://localhost:5000'
+const browseHost = process.env.REACT_APP_BROWSE_HOST || 'http://beveragebotbar.com/browse'
+const restaurantHost = process.env.REACT_APP_RESTAURANT_HOST || 'http://beveragebotbar.com/order'
+const contentHost = process.env.REACT_APP_CONTENT_HOST || 'http://beveragebotbar.com/content'
 
 let numRestaurants = 0;
 fetch(`${contentHost}/restaurants.json`)
